@@ -48,46 +48,78 @@ class Player: NSObject, AVAudioPlayerDelegate{
             prepared = true
             return true
         } catch {
-            print("prepare error")
+            print("ファイル \(path) を読み込めません。")
             return false
         }
     }
     
-    //-- 再生
-    func playSound() {
+    //--再生コントロール
+    //- 再生
+    func play() {
         if(isPrepared()) {
             audioPlayer.play()
         }else{
             print("sound preparing...");
         }
     }
-    
-    //-- 一時停止
-    func stopSound(){
+    //- 一時停止
+    func pause(){
         if(isPrepared()) {
             audioPlayer.pause()
         }else{
             print("sound preparing...");
         }
     }
-    
-    //--次の曲
+    //- 停止
+    func stop(){
+        audioPlayer.stop()
+    }
+    //- 次の曲
     func next(){
+        var tmpstat:Bool = isPlaying()
         list.next()
+        if(!list.isoutofRange()){
+            if(!setCurrent(music: getCurrent())){
+                print("読み込みエラーが発生しました。")
+            }
+        }else{
+            print("リストの範囲外へのリクエストです。")
+        }
+        if(tmpstat){
+            play()
+        }
+        
+        delegate.didFinishplaying(next: getCurrent())
+    }
+    //- 前の曲
+    func previous(){
+        var tmpstat:Bool = isPlaying()
+        list.previous()
+        if(!list.isoutofRange()){
+            if(!setCurrent(music: getCurrent())){
+                print("読み込みエラーが発生しました。")
+            }
+        }else{
+            print("リストの範囲外へのリクエストです。")
+        }
+        if(tmpstat){
+            play()
+        }
+        
+        delegate.didFinishplaying(next: getCurrent())
     }
     
-    //--前の曲
-    func previous(){
-        list.previous()
+    //--再生中?
+    func isPlaying() -> Bool{
+        return audioPlayer.isPlaying
     }
     
     //--再生終了時、次の曲へ自動遷移
     func audioPlayerDidFinishPlaying(_ avplayer: AVAudioPlayer, successfully flag: Bool) {
         //--再生終了時、次の曲へ自動遷移
-        print("finished.play next file.")
+        print("ファイル\(getCurrent().getName())の再生が終了しました。プレイリストの次の楽曲を再生します。")
         next()
-        setCurrent(music: getCurrent())
-        playSound()
+        play()
         
         delegate.didFinishplaying(next: getCurrent()) //デリゲートメソッドを呼び出す
     }

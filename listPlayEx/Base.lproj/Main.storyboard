@@ -24,17 +24,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orI-0w-LLB">
+                                <rect key="frame" x="0.0" y="468" width="414" height="269"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbf-T9-7zQ">
+                                <rect key="frame" x="0.0" y="468" width="414" height="80.5"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="onTapPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rDv-4r-8Yk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QL1-8c-WdA">
+                                <rect key="frame" x="0.0" y="548.5" width="414" height="81"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="onTapNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F00-nJ-NhR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8i-ma-Q3Y">
+                                <rect key="frame" x="0.0" y="629.5" width="414" height="80.5"/>
+                                <state key="normal" title="Previous"/>
+                                <connections>
+                                    <action selector="onTapPrevious:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3nM-e6-R5y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="m8i-ma-Q3Y" firstAttribute="top" secondItem="QL1-8c-WdA" secondAttribute="bottom" id="3YL-Uu-BOO"/>
+                            <constraint firstItem="QL1-8c-WdA" firstAttribute="height" secondItem="zbf-T9-7zQ" secondAttribute="height" id="4gV-RD-zY6"/>
+                            <constraint firstItem="orI-0w-LLB" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5DM-I6-G1C"/>
+                            <constraint firstItem="orI-0w-LLB" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="5wK-QI-zev"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zbf-T9-7zQ" secondAttribute="trailing" id="BB2-Nj-itX"/>
+                            <constraint firstItem="m8i-ma-Q3Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CPg-wY-YRs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m8i-ma-Q3Y" secondAttribute="trailing" id="GLL-UU-evn"/>
                             <constraint firstItem="Jbc-cR-bew" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="H7I-vP-2TP"/>
+                            <constraint firstItem="orI-0w-LLB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JRz-G7-fUv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QL1-8c-WdA" secondAttribute="trailing" id="JUu-oG-39J"/>
+                            <constraint firstItem="m8i-ma-Q3Y" firstAttribute="height" secondItem="zbf-T9-7zQ" secondAttribute="height" id="Nq3-QN-Xyr"/>
+                            <constraint firstItem="zbf-T9-7zQ" firstAttribute="height" secondItem="orI-0w-LLB" secondAttribute="height" multiplier="0.3" id="b7B-aq-rcO"/>
+                            <constraint firstItem="QL1-8c-WdA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gPW-bw-sff"/>
                             <constraint firstItem="Jbc-cR-bew" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gpZ-uh-Uk7"/>
                             <constraint firstItem="Jbc-cR-bew" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h8W-7Q-ctm"/>
+                            <constraint firstItem="zbf-T9-7zQ" firstAttribute="top" secondItem="Jbc-cR-bew" secondAttribute="bottom" id="jgL-5X-Hvr"/>
+                            <constraint firstItem="QL1-8c-WdA" firstAttribute="top" secondItem="zbf-T9-7zQ" secondAttribute="bottom" id="lyV-eN-u1p"/>
+                            <constraint firstItem="zbf-T9-7zQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rmk-ra-UgJ"/>
+                            <constraint firstItem="orI-0w-LLB" firstAttribute="top" secondItem="Jbc-cR-bew" secondAttribute="bottom" id="uW2-gB-AWN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="currentLabel" destination="Jbc-cR-bew" id="OIg-Nv-wdN"/>
+                        <outlet property="playButton" destination="zbf-T9-7zQ" id="zCj-HN-kJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

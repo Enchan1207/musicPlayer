@@ -15,6 +15,7 @@ class PlayerViewController: UIViewController,PlayerDelegate{
     
     //--
     @IBOutlet weak var currentLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     
     
     //--
@@ -44,18 +45,35 @@ class PlayerViewController: UIViewController,PlayerDelegate{
         }
         
         //--完成したプレイリストをPlayerに渡して再生開始
-//        playlist.shuffle()
+        playlist.shuffle()
         player.setPlayList(playlist: playlist)
         player.setCurrent(music: player.getCurrent())
         while(!player.isPrepared()){
-            print("preparing file...")
+            print("ファイルの再生を準備しています…")
         }
         self.currentLabel.text = player.getCurrent().getName()
-        player.playSound()
-        
+        player.play()
     }
     
     func didFinishplaying(next: Music) {
         self.currentLabel.text = player.getCurrent().getName()
     }
+    
+    @IBAction func onTapPlay(_ sender: Any) {
+        if(player.isPlaying()){
+            player.pause()
+            self.playButton.setTitle("Play", for: .normal)
+        }else{
+            player.play()
+            self.playButton.setTitle("Pause", for: .normal)
+        }
+    }
+    
+    @IBAction func onTapNext(_ sender: Any) {
+        player.next()
+    }
+    @IBAction func onTapPrevious(_ sender: Any) {
+        player.previous()
+    }
+    
 }

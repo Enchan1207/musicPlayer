@@ -42,7 +42,7 @@ class PlayList{
         if(current != -1){
             current += 1
             if(current == (playlist.count)){
-                //リストの最後に達した時、ループがオンなら最初に戻る　オフならnil
+                //リストの最後に達した時、ループがオンなら最初に戻る
                 if(!loop){
                     current = -1
                 }else{
@@ -56,6 +56,7 @@ class PlayList{
     func previous(){
         if(current > 0){
             current -= 1
+        //リストの最初に達した時、ループがオンなら最初に戻る
         }else if(loop){
             current = playlist.count - 1
         }else{
