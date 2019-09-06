@@ -8,10 +8,16 @@
 
 import AVFoundation
 
-class Player: NSObject,AVAudioPlayerDelegate{
+protocol  PlayerDelegate{
+    func didFinishplaying(next: Music)
+}
+
+class Player: NSObject, AVAudioPlayerDelegate{
     private var audioPlayer: AVAudioPlayer! = AVAudioPlayer()
     private var prepared: Bool = false
     private var list: PlayList = PlayList()
+    
+    var delegate: PlayerDelegate!
     
     //--playerの準備はできているか?
     func isPrepared() -> Bool{
@@ -28,7 +34,7 @@ class Player: NSObject,AVAudioPlayerDelegate{
         return list.getCurrent()
     }
     
-    //--再生するMusicインスタンスを設定
+    //--再生するMusicインスタンスを設定してロード
     func setCurrent(music: Music) -> Bool{
         return loadFile(path: music.getPath())
     }
@@ -65,10 +71,24 @@ class Player: NSObject,AVAudioPlayerDelegate{
         }
     }
     
-    //--再生終了時、次の曲へ自動遷移
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        print("finished.play next file.")
+    //--次の曲
+    func next(){
         list.next()
+    }
+    
+    //--前の曲
+    func previous(){
+        list.previous()
+    }
+    
+    //--再生終了時、次の曲へ自動遷移
+    func audioPlayerDidFinishPlaying(_ avplayer: AVAudioPlayer, successfully flag: Bool) {
+        //--再生終了時、次の曲へ自動遷移
+        print("finished.play next file.")
+        next()
+        setCurrent(music: getCurrent())
         playSound()
+        
+        delegate.didFinishplaying(next: getCurrent()) //デリゲートメソッドを呼び出す
     }
 }

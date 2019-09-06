@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9EB55D3E2321BA1100232115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB55D3D2321BA1100232115 /* AppDelegate.swift */; };
-		9EB55D402321BA1100232115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB55D3F2321BA1100232115 /* ViewController.swift */; };
+		9EB55D402321BA1100232115 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB55D3F2321BA1100232115 /* PlayerViewController.swift */; };
 		9EB55D432321BA1100232115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D412321BA1100232115 /* Main.storyboard */; };
 		9EB55D452321BA1200232115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D442321BA1200232115 /* Assets.xcassets */; };
 		9EB55D482321BA1200232115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D462321BA1200232115 /* LaunchScreen.storyboard */; };
@@ -21,6 +21,7 @@
 		9EB55D772321C2FF00232115 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB55D762321C2FF00232115 /* Player.swift */; };
 		9EB55D7C2321CB5B00232115 /* identity.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D7A2321CB5A00232115 /* identity.m4a */; };
 		9EB55D7D2321CB5B00232115 /* tell your world.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D7B2321CB5B00232115 /* tell your world.m4a */; };
+		9EB55D7F2322935E00232115 /* music.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9EB55D7E2322935E00232115 /* music.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 /* Begin PBXFileReference section */
 		9EB55D3A2321BA1100232115 /* listPlayEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listPlayEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB55D3D2321BA1100232115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9EB55D3F2321BA1100232115 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9EB55D3F2321BA1100232115 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		9EB55D422321BA1100232115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EB55D442321BA1200232115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9EB55D472321BA1200232115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		9EB55D762321C2FF00232115 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		9EB55D7A2321CB5A00232115 /* identity.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = identity.m4a; sourceTree = "<group>"; };
 		9EB55D7B2321CB5B00232115 /* tell your world.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "tell your world.m4a"; sourceTree = "<group>"; };
+		9EB55D7E2322935E00232115 /* music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = music.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9EB55D3D2321BA1100232115 /* AppDelegate.swift */,
-				9EB55D3F2321BA1100232115 /* ViewController.swift */,
+				9EB55D3F2321BA1100232115 /* PlayerViewController.swift */,
 				9EB55D762321C2FF00232115 /* Player.swift */,
 				9EB55D712321BD6600232115 /* File.swift */,
 				9EB55D702321BD6600232115 /* Regex.swift */,
@@ -148,6 +150,7 @@
 		9EB55D6B2321BB4F00232115 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9EB55D7E2322935E00232115 /* music.wav */,
 				9EB55D7B2321CB5B00232115 /* tell your world.m4a */,
 				9EB55D7A2321CB5A00232115 /* identity.m4a */,
 			);
@@ -260,6 +263,7 @@
 			files = (
 				9EB55D482321BA1200232115 /* LaunchScreen.storyboard in Resources */,
 				9EB55D452321BA1200232115 /* Assets.xcassets in Resources */,
+				9EB55D7F2322935E00232115 /* music.wav in Resources */,
 				9EB55D432321BA1100232115 /* Main.storyboard in Resources */,
 				9EB55D7C2321CB5B00232115 /* identity.m4a in Resources */,
 				9EB55D7D2321CB5B00232115 /* tell your world.m4a in Resources */,
@@ -290,7 +294,7 @@
 				9EB55D6E2321BBA500232115 /* PlayList.swift in Sources */,
 				9EB55D732321BD6600232115 /* File.swift in Sources */,
 				9EB55D722321BD6600232115 /* Regex.swift in Sources */,
-				9EB55D402321BA1100232115 /* ViewController.swift in Sources */,
+				9EB55D402321BA1100232115 /* PlayerViewController.swift in Sources */,
 				9EB55D772321C2FF00232115 /* Player.swift in Sources */,
 				9EB55D3E2321BA1100232115 /* AppDelegate.swift in Sources */,
 				9EB55D6F2321BBA500232115 /* Music.swift in Sources */,
