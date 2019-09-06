@@ -27,7 +27,7 @@ class PlayerViewController: UIViewController,PlayerDelegate{
         
         //--プレイリストを作成
         let playlist: PlayList = PlayList()
-        playlist.setLoopStat(stat: false)
+        playlist.setLoopStat(stat: true)
         
         //--バンドルされたファイルを取得(bundlePathはどこを指してるんだろう?)
         let bundle: File = File(filepath: Bundle.main.bundlePath)

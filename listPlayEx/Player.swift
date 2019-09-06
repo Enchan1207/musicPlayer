@@ -84,12 +84,8 @@ class Player: NSObject, AVAudioPlayerDelegate{
             }
         }else{
             print("リストの範囲外へのリクエストです。")
-            tmpstat = false
         }
         if(tmpstat){
-            while(!isPrepared()){
-                print("ファイルの再生を準備しています…")
-            }
             play()
         }
         
@@ -105,12 +101,8 @@ class Player: NSObject, AVAudioPlayerDelegate{
             }
         }else{
             print("リストの範囲外へのリクエストです。")
-            tmpstat = false
         }
         if(tmpstat){
-            while(!isPrepared()){
-                print("ファイルの再生を準備しています…")
-            }
             play()
         }
         
